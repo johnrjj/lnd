@@ -53,7 +53,6 @@ lnd \
     --noencryptwallet \
     --rpclisten=localhost:10009 \
     --externalip=159.203.75.235 \
-    --no-macaroons \
     --restlisten=localhost:8001 \
     --logdir="/data" \
     "--$CHAIN.active" \
