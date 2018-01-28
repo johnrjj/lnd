@@ -42,7 +42,7 @@ set_default() {
 RPCUSER=$(set_default "$RPCUSER" "devuser")
 RPCPASS=$(set_default "$RPCPASS" "devpass")
 DEBUG=$(set_default "$DEBUG" "debug")
-NETWORK=$(set_default "$NETWORK" "simnet")
+NETWORK=$(set_default "$NETWORK" "testnet")
 CHAIN=$(set_default "$CHAIN" "bitcoin")
 BACKEND="btcd"
 if [[ "$CHAIN" == "litecoin" ]]; then
@@ -51,6 +51,9 @@ fi
 
 lnd \
     --noencryptwallet \
+    --externalip=159.203.75.235 \
+    --no-macaroons \
+    --restlisten=localhost:8001 \
     --logdir="/data" \
     "--$CHAIN.active" \
     "--$CHAIN.$NETWORK" \
