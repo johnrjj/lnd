@@ -2,8 +2,8 @@ FROM golang:1.8
 
 MAINTAINER Olaoluwa Osuntokun <lightning.engineering>
 
-# Expose lnd ports (server, rpc).
-EXPOSE 9735 10009
+# Expose lnd ports (server, rpc, rest).
+EXPOSE 9735 10009 8001
 
 # Force Go to use the cgo based DNS resolver. This is required to ensure DNS
 # queries required to connect to linked containers succeed.
